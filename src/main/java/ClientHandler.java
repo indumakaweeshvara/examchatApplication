@@ -14,7 +14,6 @@ class ClientHandler implements Runnable {
     }
 
     @Override
-    //respond command tika
     public void run() {
         try (
                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -33,7 +32,7 @@ class ClientHandler implements Runnable {
                     case "UPTIME":
                         out.println(ServerMain.getUptime() + " seconds");
                         break;
-                    case "HELP": // time ,date,uptime,bye commanda nemeinm help
+                    case "HELP":
                         out.println("Available commands: TIME, DATE, UPTIME, BYE, HELP");
                         break;
                     case "BYE":
